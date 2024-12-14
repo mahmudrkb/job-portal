@@ -45,7 +45,7 @@ const JobCard = ({ job }) => {
           <div className="card-actions mt-4 flex justify-between items-center">
             <Link to={`/jobs/${job._id}`}>
               {" "}
-              <button className="btn btn-sm btn-primary">Apply Now</button>
+              <button className="btn btn-sm btn-primary">Apply details</button>
             </Link>
             <a href={`mailto:${job.hr_email}`} className="link text-sm">
               Contact HR

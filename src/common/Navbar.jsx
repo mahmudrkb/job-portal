@@ -24,7 +24,8 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink>Item 3</NavLink>
+        <NavLink to={"/myApplication"}
+        >My Application</NavLink>
       </li>
     </>
   );
