@@ -2,20 +2,20 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import AuthProvider from "../context/AuthProvider";
-import logo from "../assets/team/icone - Copy.png"
+import logo from "../assets/team/icone - Copy.png";
 
 const Navbar = () => {
   const { user, userLogout } = useContext(AuthContext);
 
-  const handleLogout=()=>{
+  const handleLogout = () => {
     userLogout()
-    .then(result=>{
-        console.log("log Out Successfully")
-    }).catch(error=>{
-        console.log(error.message)
-    })
-  }
-
+      .then((result) => {
+        console.log("log Out Successfully");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   const Links = (
     <>
@@ -24,8 +24,13 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink to={"/myApplication"}
-        >My Application</NavLink>
+        <NavLink to={"/myApplication"}>My Application</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/addJob"}>Add Job</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/myPostedJobs"}>My Posted Jobs</NavLink>
       </li>
     </>
   );
@@ -57,7 +62,10 @@ const Navbar = () => {
               {Links}
             </ul>
           </div>
-          <a className=" font-semibold flex content-center text-xl"> <img className="w-10" src={logo} alt="" /> JOB PORTAL</a>
+          <a className=" font-semibold flex content-center text-xl">
+            {" "}
+            <img className="w-10" src={logo} alt="" /> JOB PORTAL
+          </a>
           <h1>{user?.email}</h1>
         </div>
         <div className="navbar-center hidden lg:flex">
